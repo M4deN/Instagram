@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh; /* largura mínima */
+    background-color: rgb(252, 252, 252);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* alinha os elememtos de forma centralizada */
+}
+
+.instagram-wrapper {
+    display: flex; /* alinha os elementos na horizontal */
+    align-items: center; /* alinha os elementos na vertical e centraliza (eixo y) */
+    justify-content: center; /* o start seria o "começar daqui" esquerda para a direita */
+    width: 60%; /* altura / tamanho */
+    height: 100vh;
+}
+
+.instagram-phone {
+    display: flex;
+    align-items: center; /* alinha os itens na vertical e no centro */
+    justify-content: center; /* alinha os itens na horizontal e no centro */
+}
+
+.instagram-phone img {
+    height: 50rem;
+}
+
+.instagram-continue {
+    display: flex;
+    align-items: center; /* ficou na horizontal  */
+    justify-content: space-around;  /* ficou na vertical */
+    flex-direction: column; /* coloca os elementos (colunas) um em baixo do outros "os blocos" */
+    width: 50%;
+    height: 80%;
+    min-height: 34rem;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between; /* espaço entre os elementos */
+    align-items: center;
+    flex-direction: column; /* é o que faz o eixo mudar fazendo com que o justify-content fica na vertical e o aliign-items na horizontal (só acontece se colocar para "column") */
+    background-color: white;
+    width: 100%;
+    padding: 1.3rem 0;
+    border: 1px solid lightgray;
+}
+
+.group:nth-child(1) { /* Seletor que pega os "filhos" de um elemento */
+    min-height: 19rem;
+}
+
+.instagram-logo {
+    height: 3.5rem;
+    padding-top: 10px;
+    margin-top: -3.5%;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden; /* faz com que a imagem não exceda o tamanho para fora da div */
+}
+
+.profile-photo img {
+    height: 6rem;
+}
+
+.instagram-login {
+    background-color: #0095f6;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.instagram-logout {
+    color: #0095f6;
+    margin-top: 1rem;
+}
+
+.not-account {
+    color: rgb(160, 160, 160);
+}
+
+.link-blue {
+    color: #0095f6;
+}
+
+.get-the-app {
+    display: flex; /* (flex-container) */
+    flex-direction: column;
+    align-items: center; /* alinha horizontalmente no centro */
+    justify-content: center;
+    width: 120%;
+    padding: 1.3rem 0; /* em cima e em baixo fica 1.3rem */
+}
+
+.download {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly; /* deixa os elementos com o mesmo espaço tanto do lado quanto do meio */
+    align-items: center;
+    padding: 1rem;
+} 
+
+.app-download {
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;
+}
+
+.app-download:nth-child(1) {
+    background-image: url('./img/apple-button.png');
+}
+
+.app-download:nth-child(2) {
+    background-image: url('./img/googleplay-button.png');
+}
+
+/* media queries */
+
+@media (max-width:1024) { /* quando chegar a 1024 pixels ele fará.... */
+    .instagram-wrapper {
+        width: 100%;
+        display: auto;
+    }
+} 
+
+@media (max-width: 708px) {
+    body {
+        background-color: white;
+    }
+    .instagram-wrapper {
+        width: 80%;
+    }
+
+    .instagram-phone { /* irá retirar a imagem do celular para deixar só o login !!! */
+        display: none;
+
+    }
+
+    .instagram-continue {
+        width: 100%;
+    }
+
+    .group {
+        border: 1px solid transparent;
+    }
+}
+
